@@ -16,25 +16,22 @@ public abstract class Container : IContainer
  public string SeriesNumber { get; set; }
  public double CargoMaxWeight { get; set; }
  public static int number;
+ public static string Type { get; protected set; }
  
- 
- protected Container(double cargoWeight)
+ protected Container(double cargoWeight,double cargoMaxWeight)
  {
-  CargoWeight = cargoWeight;
+  CargoMaxWeight = cargoMaxWeight;
   number += 1;
+  SeriesNumber = "KON-"+Type+"-" + number;
+  Load(cargoWeight);
  }
- 
  public virtual void UnLoad()
  {
   CargoWeight=0.0;
  }
-
  public virtual void Load(double cargoWeight)
  {
-  if(cargoWeight > CargoMaxWeight)
-  throw new OverfillException();
+  if(cargoWeight > CargoMaxWeight){ throw new OverfillException();}
+  else{CargoWeight = cargoWeight;}
  }
- 
- 
- 
 }
