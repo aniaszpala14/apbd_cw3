@@ -6,7 +6,6 @@ public class CoolingContainer : Container
 {
     public PossibleProducts Product;
     public double Temperature;
-    Dictionary<string,int> dict = new Dictionary<string,int>();
     public static Dictionary<PossibleProducts, double>Products;
   
  
