@@ -6,24 +6,26 @@ public class GasContainer : Container,IHazardNotifier
 {
     public double AirPressure { get; set; }
     
-    static GasContainer() { Type = "G"; }
-    public GasContainer(double cargoWeight,double cargoMaxWeight,double airPressure) : base(cargoWeight,cargoMaxWeight)
+    public GasContainer(double airPressure) : base(2000,4,4,3000,"G")
     {
        AirPressure=airPressure;
     }
     public override void UnLoad()
     {
-        CargoWeight=CargoWeight*0.05;
+        CargoWeight*=0.05;
+        AirPressure = 1013;
     }
 
     public override void Load(double cargoWeight)
     {
+        base.Load(cargoWeight);
         if(cargoWeight > CargoMaxWeight)
         {
             SendNotification();
             throw new OverfillException();
         }
-      CargoWeight = cargoWeight;
+      CargoWeight += cargoWeight;
+      AirPressure *= 6;
     }
     public void SendNotification()
     {

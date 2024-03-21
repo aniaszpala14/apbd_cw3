@@ -5,22 +5,17 @@ namespace Projekt_3;
 public class LiquidContainer : Container,IHazardNotifier
 {
     public bool IsSave { get; set; }
-    static LiquidContainer() { Type = "L"; }
-    public LiquidContainer(double cargoWeight,double cargoMaxWeight,bool isSave) : base(cargoWeight,cargoMaxWeight)
+    public LiquidContainer(bool isSave) : base(3000,4,4,3000,"L")
     {
         IsSave = isSave;
     }
 
-    public override void UnLoad()
-    {
-        base.UnLoad();
-    }
-
     public override void Load(double cargoWeight)
     { 
+        base.Load(cargoWeight);
         if(cargoWeight > CargoMaxWeight){ throw new OverfillException();}
         if (cargoWeight>(CargoMaxWeight*0.9) || (!IsSave &&  cargoWeight>(CargoMaxWeight*0.5))) { SendNotification(); }
-        CargoWeight = cargoWeight;
+        CargoWeight += cargoWeight;
     }
 
     public void SendNotification()
