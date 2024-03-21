@@ -1,8 +1,4 @@
-﻿using System.Buffers;
-using System.ComponentModel;
-using System.Runtime.InteropServices.JavaScript;
-using Projekt_3.Exceptions;
-using Projekt_3.Interfaces;
+﻿using Projekt_3.Exceptions;
 using IContainer = Projekt_3.Interfaces.IContainer;
 
 namespace Projekt_3;
@@ -39,6 +35,6 @@ private static string Type { get; set; }
 
  public override string ToString()
  {
-  return "Kontener " + SeriesNumber + " o wadze " + CargoItsWeight + " i wymiarach " + CargoDepth + "x" + CargoHeight;
+  return "Kontener: " + SeriesNumber + " | Waga własna: " + CargoItsWeight +"kg | Obecny załadunek: "+CargoWeight+"kg | Wymiary: " + CargoDepth + "mx" + CargoHeight+"m ";
  }
 }

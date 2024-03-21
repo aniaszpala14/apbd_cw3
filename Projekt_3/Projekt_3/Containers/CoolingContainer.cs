@@ -4,10 +4,9 @@ namespace Projekt_3;
 
 public class CoolingContainer : Container
 {
-    public PossibleProducts Product;
-    public double Temperature;
-    public static Dictionary<PossibleProducts, double>Products;
-  
+    private PossibleProducts Product;
+    private double Temperature;
+    private static Dictionary<PossibleProducts, double>Products;
  
     public CoolingContainer(PossibleProducts product,double temperature) : base(5000,4,4,4000,"C")
     {
@@ -27,7 +26,7 @@ public class CoolingContainer : Container
     
     public override string ToString()
     {
-        return base.ToString() + " wiezie produkty " + Product + " temperatura w kontenerze " + Temperature;
+        return base.ToString() + " -> Przewozi " + Product + " w temperaturze " + Temperature+" stopni Celsjusza";
     }
     
 }

@@ -33,6 +33,6 @@ public class GasContainer : Container,IHazardNotifier
     }
     public override string ToString()
     {
-        return base.ToString() + " Cisnienie w srodku wynosi "+AirPressure;
+        return base.ToString() + " -> Cisnienie w srodku wynosi "+AirPressure+ "hPa";
     }
 }

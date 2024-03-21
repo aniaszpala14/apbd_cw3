@@ -96,7 +96,7 @@ public class ContainerShip
     {
         string allcons = "";
         for (int i = 0; i < AllContainers.Count; i++) allcons += AllContainers[i].SeriesNumber+" | ";
-        return "Statek o maksymalnej wadze " + MaxWeight + ", max predkosci " + MaxSpeed + " i max ilosci kontenerow " +
-               MaxAmount+ "  wiezie kontenery : "+allcons;
+        return "Statek - Max Waga: " + MaxWeight + " ton | Max predkosc: " + MaxSpeed + " wezlow | Max ilosci kontenerow " +
+               MaxAmount+ "  -> wiezie kontenery : "+allcons;
     }
 }

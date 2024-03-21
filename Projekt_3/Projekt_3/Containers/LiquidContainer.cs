@@ -4,7 +4,7 @@ namespace Projekt_3;
 
 public class LiquidContainer : Container,IHazardNotifier
 {
-    public bool IsSave { get; set; }
+    private bool IsSave { get; set; }
     public LiquidContainer(bool isSave) : base(3000,4,4,3000,"L")
     {
         IsSave = isSave;
@@ -17,13 +17,12 @@ public class LiquidContainer : Container,IHazardNotifier
         if (cargoWeight>(CargoMaxWeight*0.9) || (!IsSave &&  cargoWeight>(CargoMaxWeight*0.5))) { SendNotification(); }
         CargoWeight += cargoWeight;
     }
-
     public void SendNotification()
     {
     Console.WriteLine("Kontener " +SeriesNumber +" w niebezpiecznym stanie - przekroczona dopuszczalna ilość płynu ");    
     }
     public override string ToString()
     {
-        return base.ToString() + (IsSave?" bezpieczny ładunek":"niebezpieczny ładunek");
+        return base.ToString() + " -> przewozi "+(IsSave?" bezpieczny ładunek":"niebezpieczny ładunek");
     }
 }

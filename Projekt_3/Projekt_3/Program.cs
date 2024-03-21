@@ -77,5 +77,6 @@ ContainerShip statek2 = new ContainerShip(15, 50, 9);
 
 statek2.Move(statek,cons2);
 Console.WriteLine(statek2);
+Console.WriteLine(statek);
 
 
