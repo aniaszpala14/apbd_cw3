@@ -66,7 +66,9 @@ Console.WriteLine(cons3.SeriesNumber);
 statek.Remove("KON-G-9");
 statek.Replace(cons1.SeriesNumber,cons5);
 
+Console.WriteLine(con1);
 Console.WriteLine(con5);
+Console.WriteLine(con3);
 Console.WriteLine(statek); // dobrze bo usunieto con3
 
 ContainerShip statek2 = new ContainerShip(15, 50, 9);

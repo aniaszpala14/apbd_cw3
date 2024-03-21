@@ -25,6 +25,9 @@ public class CoolingContainer : Container
         Products = products;
     }
     
-    
+    public override string ToString()
+    {
+        return base.ToString() + " wiezie produkty " + Product + " temperatura w kontenerze " + Temperature;
+    }
     
 }

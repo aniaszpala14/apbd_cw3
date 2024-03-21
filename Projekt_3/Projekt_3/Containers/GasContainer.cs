@@ -31,4 +31,8 @@ public class GasContainer : Container,IHazardNotifier
     {
         Console.WriteLine("Kontener " +SeriesNumber +" w niebezpiecznym stanie - przekroczona dopuszczalna ilość gazu ");    
     }
+    public override string ToString()
+    {
+        return base.ToString() + " Cisnienie w srodku wynosi "+AirPressure;
+    }
 }

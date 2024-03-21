@@ -22,4 +22,8 @@ public class LiquidContainer : Container,IHazardNotifier
     {
     Console.WriteLine("Kontener " +SeriesNumber +" w niebezpiecznym stanie - przekroczona dopuszczalna ilość płynu ");    
     }
+    public override string ToString()
+    {
+        return base.ToString() + (IsSave?" bezpieczny ładunek":"niebezpieczny ładunek");
+    }
 }
